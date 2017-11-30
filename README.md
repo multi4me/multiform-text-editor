@@ -1,7 +1,6 @@
-# ***MultiformTextEditor***
+# ***MultiformTextEditor*** - **jQuery plugin for rich text editing**
 <br><br>
-> Made to be used by other programmers and receive contributions from the <em>JavaScript</em> developer community. If you are one of them, contribute, and if you are a Portuguese-speaker help us to translate the code into English. :octocat:
-
+> It's a JavaScript/jQuery plugin, highly flexible, designed for rich WYSIWYG text editing for web. Made to be used by other programmers and receive contributions from the <em>JavaScript</em> development community. If you are one of them, contribute, and if you are a Portuguese speaker help us to translate the code and files into English. Thank you! :octocat:
 
 <br><br>
 ![prtflo_modulo_PluginFormatTxt1](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt1.jpg)
@@ -165,9 +164,11 @@ $("#menu-edit").formatTxt($("#box-txt"), null, {txtcortp: function(mnmp, slc){//
 Other events after the application are readily prepared in content editing box as:
 
 - When selecting text or positioning the cursor (by mouse or keyboard) detects formatting (tags) already applied to highlight the items on the menu:
+
 ![prtflo_modulo_PluginFormatTxt3](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt3.jpg)
 ![prtflo_modulo_PluginFormatTxt9](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt9.jpg)
 ![prtflo_modulo_PluginFormatTxt12](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt12.jpg)
+
 - Clear formatting when user pasting text by mouse or keyboard. Checks for print data in memory and reinserts it plain;
 - When user hits tab, inserts the equivalent space code in html, without losing focus
 
