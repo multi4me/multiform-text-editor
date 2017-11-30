@@ -1,6 +1,6 @@
 # ***MultiformTextEditor*** - **jQuery plugin for rich text editing**
 <br><br>
-> It's a JavaScript/jQuery plugin, highly flexible, designed for rich WYSIWYG text editing for web. Made to be used by other programmers and receive contributions from the <em>JavaScript</em> development community. If you are one of them, contribute, and if you are a Portuguese speaker help us to translate the code and files into English. Thank you! :octocat:
+> It's a JavaScript/jQuery plugin, highly flexible, designed for rich WYSIWYG text editing for web. Made to be used by and receive contributions from, the *JavaScript development community*. If you are one of them and feel like to contribute with this conception, and/or if you are a Portuguese speaker and want to help us translate all into English, thank you! :octocat:
 
 <br><br>
 ![prtflo_modulo_PluginFormatTxt1](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt1.jpg)
