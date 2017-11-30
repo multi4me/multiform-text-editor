@@ -1,4 +1,15 @@
-/*----- Plugin de formatação de texto baseado em JQuery. Criado na CPB (Casa Publicadora Brasileira ®) -----*/
+/*!
+ * MultiformTextEditor - jQuery plugin for rich text editing
+ * version: 1.0.0 (30 Nov 2017)
+ * @requires jQuery v2.0 or later
+ *
+ * License: MIT License
+ *
+ * Copyright (c) 2017 Multi4me - multi4me@outlook.com
+ *
+ */
+
+
 
 /*Focado em programadores com experiência em JavaScript e JQuery, o objetivo do plugin é ser uma forma de editar texto com a flexibilidade que permita adicionar qualquer tipo de formatação e inserção sem a necessidade de alterar a base do plugin e usando qualquer estrutura HTML e estilização que se queira.
 - O protótipo "formatTxt()" aplica os eventos aos itens do menu e caixa de edição para destaque, detecção e aplicação dos formatos e montagens. Usa o objeto "datafrmt_obj" para aplicação das edições com o comando "execCommand(comando, ShowDefaultUI(false), valor(opcional))" e outras possibilidades de formatação.
