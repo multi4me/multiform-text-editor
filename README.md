@@ -1,192 +1,172 @@
-# MultiformTextEditor
-The plugin <em>JavaScript/jQuery</em> <span style="color: #7a4120;"><em><strong>MultiformTextEditor</strong></em></span> is  highly flexible, designed for rich editing <strong><em>WYSIWYG</em></strong> (interfaces that allow the user to see something very similar to the final result) of text on the web, with the distinction of being moldable to the level of their own methods and controls assembly so that the developers redesign the code according to their needs and a wide range - from a simple set of controls (bold, italics, underline, superscript, listing, etc) for basic formatting or <em>inline</em>, to a whole vast range of formats, inserts and possible stylizations by the options menu.
-<em><img class=" size-full wp-image-3199 aligncenter" src="https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt1.jpg" alt="prtflo_modulo_PluginFormatTxt1" width="715" height="51" /></em>
+# ***MultiformTextEditor***
 
-Made to be used by other programmers and receive contributions from the <em>JavaScript</em> developer community. If you are one of them, contribute, and if you are a Portuguese-speaker help us to translate the code into English.
+> Made to be used by other programmers and receive contributions from the <em>JavaScript</em> developer community. If you are one of them, contribute, and if you are a Portuguese-speaker help us to translate the code into English. :octocat:
 
-Focado em programadores com experiência em <strong><em>JavaScript & jQuery</em></strong>, o objetivo do plugin, além de ser limpo e muito leve, é ser uma forma de editar texto em um gral de customização que se permita adicionar qualquer tipo de formatação e inserção sem a necessidade de alterar a base e padrões do plugin (mas pronto para isso também e podendo servir de base para outros plugins) e permitindo usar qualquer estrutura <em>HTML</em> nos controles, botões e estilização que se queira ao montar o menu de edição. Para isso, necessita-se de algum padrão de configuração de rótulos a ser seguido, no nome das classes e uso de atributos de dados nos elementos principais, são eles:
-<ul>
-	<li><span style="color: #808000;"><strong>frmttxt-mn-it</strong></span> para cada item de formatação, com o atributo <span style="color: #808000;"><strong>data-frmt="*"</strong></span> para o tipo de formatação e opcionalmente <span style="color: #808000;"><strong>data-val="*"</strong></span>;</li>
-	<li><strong><span style="color: #808000;">frmttxt-mn-gp</span></strong> para grupo de itens de formatação e um elemento filho com a classe <span style="color: #808000;"><strong>frmttxt-mn-drpdn</strong></span> para servir de invólucro dos itens;</li>
-	<li><span style="color: #808000;"><strong>frmttxt-mn-mp</strong></span> para manipuladores de outros elementos e dados antes e durante as formatações, com o atributo <span style="color: #808000;"><strong>data-mnpl="*"</strong></span> para o nome do método</li>
-</ul>
-Cada item de formatação terá a classe <strong>frmttxt-mn-it</strong> e nele o atributo <strong>data-frmt="*"</strong> possuirá o mesmo rótulo da formatação escolhida, referenciada no objeto <strong>datafrmt_obj</strong> (explicado mais à frente), opcionalmente podendo-se usar <strong>data-val="*"</strong> para quando se quer passar valor à formatação, embora seja possível passar valor de diferentes formas. Elementos que listam um grupo de itens de formatação (como uma paleta de cores, em que cada cor é um elemento "frmttxt-mn-it") terá a classe <strong>frmttxt-mn-gp</strong>, que quando clicado exibirá seu filho com a classe <strong>frmttxt-mn-drpdn</strong> que é quem possui o conjunto de itens de formatação. Se um elemento em algum lugar no menu for necessário para manipular elementos e dados antes e durante as formatações (como dois elementos para o usuário selecionar se quer aplicar cor ao texto ou fundo), deve-se setar a classe <strong>frmttxt-mn-mp</strong> e o atributo <strong>data-mnpl="*"</strong> com o nome do método criado no objeto <strong>datamnpl_obj</strong> (deve ser diferente dos nomes de "datafrmt_obj"). Veja a explicação dos objetos "datafrmt_obj" e "datamnpl_obj" ao final. Ambos podem ser editados pelo programador para se alterar os padrões de formatação já disponíveis.
-* Como caixa de texto deve-se usar um elemento <strong>não-input</strong> com o atributo <span style="color: #808000;"><strong>contenteditable</strong><strong>="true"</strong></span>
+![prtflo_modulo_PluginFormatTxt1](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt1.jpg)
 
-Veja um exemplo simples de estruturação <em>HTML</em> para um menu de controles e a caixa de texto editável:
+Focused on programmers with experience in ***JavaScript & jQuery***, the purpose of the plugin as well as being clean and slim, it is a way to edit text on a level of customization to add any kind of formatting and insertion without the need to change the base and plug standards (but ready for this too and can serve as a basis for other plugins) and allowing us to use any HTML structure in the controls, buttons and styling when mounting the edit menu. For this, we need some standard labels setting to be followed when naming classes and in the using data attributes in the main elements, they are:
 
-[code language="html"]
+- **frmttxt-mn-it** for each format item with the attribute **data-frmt="\*"** for the format type and optionally **data-val="*"**
+- **frmttxt-mn-gp** for groupd of formatting items and a child element with the class **frmttxt-mn-drpdn** to serve as wrapper of the items;
+- **frmttxt-mn-mp** for handlers of other elements and data before and during the formatting, with the attribute **data-mnpl="*"** for the name of the method
+
+Each format item will have the class **frmttxt-mn-it** and the attribute **data-frmt="\*"** will have the same chosen format label, referenced in the objec **datafrmt_obj** (explained later) optionally being able to use **data-val="\*"** for when we want to pass value formatting, although it is possible to pass value in different ways. Elements that list a group of formatting items (like a color palette, where each color is an element *"frmttxt-mn-it"*) will have the class **frmttxt-mn-gp**, which when clicked will display its child with the class **frmttxt-mn-drpdn** that is who owns the set of formatting items. If an element somewhere in the menu is needed to manipulate other elements and data before and during the formatting (such as two elements for the user to select whether to apply color to text or background), we should set the class **frmttxt-mn-mp** and the attribute **data-mnpl="\*"** with the name of the method created in the object **datamnpl_obj** (deve ser diferente dos nomes de *"datafrmt_obj"*). (must be different from the names of *"datafrmt_obj"*). See the explanation of the objects *"datafrmt_obj"* and *"datamnpl_obj"* at the end. Both can be edited by the programmer to change the formatting standards already available. 
+\* As text box for editing we should use a **non-input** element with the attribute `contenteditable="true"`
+
+Here is a simple example of a HTML structure for a menu of controls and editable text box:
+
+```html
 <div id="menu-edit unselectable">
-    <b class="frmttxt-mn-it" data-frmt="ngrto">B</b>
-    <i class="frmttxt-mn-it" data-frmt="itlco">i</i>
-    <u class="frmttxt-mn-it" data-frmt="sblnhdo" data-val="underline">U</u>
-<div class="frmttxt-mn-gp texto-cor">
-<span>✽</span>
-<div class="frmttxt-mn-drpdn d-nn">
-            <span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(255, 255, 255)" style="background: #FFFFFF;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(247, 218, 100)" style="background: #F7DA64;"></span>
-            <span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(0, 168, 133)" style="background: #00A885;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(128, 110, 128)" style="background: #806E80;"></span>
-            <span class="frmttxt-mn-it rmv" data-frmt="txtcor" data-val="#888888" style="background: #F1F1F1;">×</span><!-- Usado como remoção de cor de texto ou fundo -->
-<div class="frmttxt-mn-mp" data-mnpl="txtcortp">
-                <input id="tipo-cor1" type="radio" name="tipo-cor" value="1" checked><label for="tipo-cor1">Texto</label>
-                <input id="tipo-cor2" type="radio" name="tipo-cor" value="2"><label for="tipo-cor2">Fundo</label>
-</div>
-</div>
-</div>
-<span class="frmttxt-mn-it limpa-frmt" data-frmt="lmpfrmt"> </span>
+	<b class="frmttxt-mn-it" data-frmt="ngrto">B</b>
+	<i class="frmttxt-mn-it" data-frmt="itlco">i</i>
+	<u class="frmttxt-mn-it" data-frmt="sblnhdo" data-val="underline">U</u>
+	&nbsp;&nbsp;❘&nbsp;&nbsp;
+	<div class="frmttxt-mn-gp texto-cor">
+		<span>✽</span>
+		<div class="frmttxt-mn-drpdn d-nn">
+			<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(255, 255, 255)" style="background: #FFFFFF;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(247, 218, 100)" style="background: #F7DA64;"></span>
+			<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(0, 168, 133)" style="background: #00A885;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(128, 110, 128)" style="background: #806E80;"></span>
+			<span class="frmttxt-mn-it rmv" data-frmt="txtcor" data-val="#888888" style="background: #F1F1F1;">×</span><!-- Used to remove color from text or background -->
+			<div class="frmttxt-mn-mp" data-mnpl="txtcortp">
+				<input id="tipo-cor1" type="radio" name="tipo-cor" value="1" checked><label for="tipo-cor1">Texto</label>
+				<input id="tipo-cor2" type="radio" name="tipo-cor" value="2"><label for="tipo-cor2">Fundo</label>
+			</div>
+		</div>
+	</div>
+	&nbsp;&nbsp;&nbsp;❘&nbsp;&nbsp;
+	<span class="frmttxt-mn-it limpa-frmt" data-frmt="lmpfrmt">&nbsp;</span>
 </div>
 <div id="box-txt" contenteditable="true" placeholder="Digite o texto"></div>
-[/code]
+```
 
-É necessário incluir na <em>index</em> do site a biblioteca <strong><em>jQuery</em></strong> (versão mínima 2.0) e o plugin <span style="color: #7a4120;"><em><strong>MultiformTextEditor</strong></em></span>:
 
-[code language="html" gutter="false"]
+We must include the **jQuery** (minimum version 2.0) in the index of our site and the plugin ***MultiformTextEditor***:
+
+```html
 <script src="/path/to/jquery.multiform-text-editor.js"</script>
-[/code]
+```
 
-As páginas então estarão prontas para receber aplicações de montagem dos menus para as caixas de edição especificadas, via jQuery; assim:
 
-<strong>$(<span style="color: #808000;">menu-element</span>).<span style="color: #807482;">formatTxt</span>(<span style="color: #808000;">$(box-element)</span>|<span style="color: #808000;">function()</span>[,<span style="color: #808000;"> datafrmt_obj</span>, <span style="color: #808000;">datamnpl_obj</span>, <span style="color: #808000;">callback(</span></strong><span style="color: #808000;">$bxelmt, slc_obj, exec</span><strong><span style="color: #808000;">)</span>]);</strong>
+The pages will then be ready to receive mounting applications of menus for the specified edit boxes, via **jQuery**; like this:
 
-<strong>
-Descrição
-</strong>
+`**$(menu-element).formatTxt($(box-element)|function()[, datafrmt_obj, datamnpl_obj, callback($bxelmnt, slc_obj, exec)]});**`
 
-<hr />
 
-<strong><span style="color: #808000;">menu-element</span></strong>: Id/classe do envólucro dos controles do menu de edição. Se for uma classe representando múltiplos elementos, o parâmetro <span style="color: #808000;">box-element</span> precisa ser uma função para retorno da caixa de edição específica de cada menu.
-<strong><span style="color: #808000;">box-element|function()</span></strong>: Elemento <em>jQuery</em> especificando a caixa de edição de conteúdo | Função para retorno personalizado da caixa de edição e em cujo escopo o valor de <strong>this</strong> refere-se ao atual elemento <em>jQuery</em> do menu.
-<strong><span style="color: #808000;">datafrmt_obj </span></strong><span style="color: #808000;">(opcional)</span>: Objeto para inclusão de formatos extras conforme o padrão e possibilidades demonstrados no corpo do plugin:
-<span style="color: #808000;">{bold: {tp:"bold", tg:["B", "STRONG"]}, itlco: {tp:"italic", tg:["I", "EM"]}, color: {...}, ...}</span>
-<strong><span style="color: #808000;">datamnpl_obj </span></strong><span style="color: #808000;">(opcional)</span>: Objeto para eventos extras do menu com métodos para anexar manipulações ao fluxo principal de formatações, conforme o padrão e possibilidades demonstrados no corpo do plugin:
-<span style="color: #808000;">{colortype: function(mnmp, slc){ ... }}
-<strong>callback(</strong>$bxelmt, slc_obj, exec<strong>)</strong></span>: Se definida, a função é chamada após qualquer formatação no conteúdo. O <strong>this</strong> no escopo da função é o item/$(elemento) clicado no menu. Parâmetros:
-<span style="color: #808000;">    $bxelmt</span>: elemento <em>jQuery</em> da caixa editável;
-<span style="color: #808000;">    slc_obj</span>: objeto de dados da seleção/posicionamento atual no conteúdo ({rng: range-obj, elmt: slctd-elmnt, tag: slctd_tag, txt: slctd_txt});
-<span style="color: #808000;">    exec</span>: true/false informando se a formatação aplicada foi suportada no browser atual<span style="color: #808000;">
-</span>
+# Description
 
-<strong>
-Exemplo 1
-</strong>
+- **menu-element**: id/class of the wrapper element of the editing menu controls. If it's a class representing multiple elements, the parameter *"box-element"* needs to be a function to return the specific edition of each menu box.
+- **box-element|function()**: element *jQuery* specifying the content editing box or a custom function to return the edit box - inside its scope the value of **this** refers to the current menu *jQuery* element.
+- **datafrmt_obj** (optional): object to inclusion of extra formats according to standards and possibilities detailed in the plug body:
+  - `{bold: {tp:"bold", tg:["B", "STRONG"]}, itlco: {tp:"italic", tg:["I", "EM"]}, color: {...}, ...}`
+- **datamnpl_obj** (opcional): object for extra menu events with methods to attach manipulations to mainstream formats according to standards and possibilities detailed in the plug body:
+  - `{colortype: function(mnmp, slc){ ... }}`
+- **callback($bxelmnt, slc_obj, exec)**: if set, the function is called after any content formatting. The **this** in the scope function is the *item/$(element)* clicked on the menu. Parameters:
+  - **$bxelmnt**: jQuery element of the edit box;
+  - **slc_obj**: data object of the current selection in the content `{rng: range-obj, NEMt: slctd-elmnt tag: slctd_tag, txt: slctd_txt}`;
+  - **exec**: true/false indicating whether the formatting applied was supported in the current browser
 
-<hr />
 
-[code language="javascript"]
+### Example 1
+
+```javascript
 $("#menu-edit").formatTxt($("#box-txt"));
-[/code]
+```
 
-<strong>
-Exemplo 2
-</strong>
 
-<hr />
+### Example 2
 
-[code language="javascript"]
+```javascript
 $("#menu-edit").formatTxt($("#box-txt"), {blckqte: {tg:["BLOCKQUOTE"], vltgc: function(mnit, slc){
-    return " "+(slc.txt || "...")+" ";
+	return " "+(slc.txt || "...")+" ";
 }}});
-[/code]
+```
 
-- Acrescentou um objeto com uma nova formatação para criação de bloco de citação.
+- Added an object with a new format for creating block quote.
 
-<strong>
-Exemplo 3
-</strong>
 
-<hr />
+### Example 3
 
-[code language="javascript"]
+```javascript
 $(".menu-edit").formatTxt(function(){
-    return $(this).parent().find(".box-txt")}
+	return $(this).parent().find(".box-txt")}
 );
-[/code]
+```
 
-<strong>
-Exemplo 4</strong>
 
-<hr />
+### Example 4
 
-[code language="javascript"]
+```javascript
 $("#menu-edit").formatTxt($("#box-txt"), null, null, function(cx, slc, exc){
-    cx.keyup();
-    exc == false ? alert("Formatação não suportada por este navegador") : null;
+	cx.keyup();
+	exc == false ? alert("Formatação não suportada por este navegador") : null;
 });
-[/code]
+```
 
-- Uma função é passada como último parâmetro para executar algo após qualquer alteração na caixa de texto.
+- A function is passed as the last parameter to run something after any change in the text box.
 
-<strong>
-Execução e formatações predefinidas</strong>
 
-<hr />
+# Execution and predefined formatting
 
-O método construtor <span style="color: #807482;"><strong>formatTxt()</strong></span> do plugin, busca os elementos com as classes padrão e prepara os eventos dos itens do menu e a caixa de edição para destaque, detecção e aplicação dos formatos e montagens. Usa o objeto predefinido <strong>datafrmt_obj </strong>(mais o objeto de formatações personalizadas, se informado) para aplicação de edições por diversas possibilidades de formatação, incluindo o uso do método <strong>execCommand(comando, ShowDefaultUI(false), valor(opcional))</strong>, que permite executar comandos de formatação padrões para editar o conteúdo selecionado ou no local posicionado.
+The plugin constructor method ***formatTxt()***, search the elements with the standard classes and prepares the events of the menu items and edit box to highlight, detection and application of formattings and assemblies. Uses the default object **datafrmt_obj** (plus custom formatting object, if specified) for application of several formatting options, including the use of the method `execCommand (command, ShowDefaultUI(false), value(optional))`, which allows us to run standard formatting commands to edit content.
 
-<img class=" size-full wp-image-3200 aligncenter" src="https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt2.jpg" alt="prtflo_modulo_PluginFormatTxt2" width="718" height="215" />
+![prtflo_modulo_PluginFormatTxt2](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt2.jpg)
 
-O exemplo acima foi montado já usando os rótulos (classes e atributos de dados) das formatações pré-criadas para <strong>negrito</strong>, <strong>itálico</strong>, <strong>sublinhado</strong>,<strong> riscado</strong>, <strong>sobrelinhado</strong> (overline), <strong>sobrescrito</strong>, <strong>subscrito</strong>, <strong>inserção</strong> de caracteres, <strong>listagens</strong>, <strong>tamanho</strong> da fonte, <strong>cor</strong> de texto e fundo, adição/remoção de <strong>link</strong> e <strong>limpeza-de-formatação</strong>.
+The example above has been assembled using the labels (classes and attributes) of pre-created formatting for **bold** , **italics**, **underline**, **scratched**, **overline**, **superscript**, **subscript**, **insertion** of characters, **lists**, **size** of font, **color** of text and background, addition/removal of link and formatting cleanup.
 
-[gallery ids="3203,3204,3205,3206,3208,3209" type="square"]
-<strong>Formatações personalizadas com "datafrmt_obj"
-</strong>
+![prtflo_modulo_PluginFormatTxt7](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt7.jpg)
+![prtflo_modulo_PluginFormatTxt10](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt10.jpg)
 
-<hr />
 
-Com a opção de adição de um objeto de formatações personalizadas e um de manipulações extras, é possível, por exemplo, adicionar uma lista de formas em SVG (retângulo, losango, elipse, etc.) para serem inseridos no texto, algo que não é padrão dos plugins de edição, ou mesmo um item para aplicar um conjunto de estilos css ao texto selecionado por meio de uma classe pré-criada no css da página. O programador deverá seguir os padrões do objeto <strong>datafrmt_obj</strong> para adicionar propriedades e métodos para formatar, manipular e inserir na caixa editável, podendo reescrever os dados padrões, seus rótulos e valores.
+# Custom formats with *"datafrmt_obj"*
 
-Ainda no exemplo acima o programador poderá, antes de aplicar o <span style="color: #807482;"><strong>formatTxt()</strong></span>, alterar dados das formatações padrões como o <strong>sublinhado </strong>("sblnhdo"), por exemplo, mudando a forma como texto terá um traço inferior (aplicando um estilo com atributo "text-decoration", por exemplo) e colocando <strong>data-val="underline"</strong> no html do item no menu:
+With the options of adding a custom formatting object and extra manipulations, that's possible, for example, add a list of shapes in SVG (rectangle, diamond, ellipse, etc.) to be inserted in the text, something that is not usually offered by plugins, or even an item to apply a set of *css* pre-created styles to the text selected. Programmers must follow the standards of **datafrmt_obj** to add properties and methods to format, manipulate and insert into the editable box. We can even rewrite data standards, their labels and values.
 
-[code language="javascript"]
+Still in the example above, the programmer may, before applying the ***formatTxt()***, change data from formatting standards such as underscore ( "sblnhdo"), for instance, changing the way text will have a lower trace (applying a style attribute *"text-decoration"*, for example) and placing `data-val = "underline"` in the html of menu item:
+
+```javascript
 $.fn.formatTxt.datafrmt_obj.sblnhdo = {tg:[{nm:null, atr:"style", ext:"text-decoration"}], vlatr: function(mnit, slc){
-    return ["style", "text-decoration"];
+	return ["style", "text-decoration"];
 }};
-[/code]
+```
 
-Também seria possível passar o mesmo objeto de formatação para sublinhado como parâmetro na aplicação de <span style="color: #807482;"><strong>formatTxt()</strong></span> e usando o mesmo nome da formatação padrão ("sblnhdo") para que seja sobrescrita.
+It would also be possible to pass the same formatting object for *underline* as a parameter of ***formatTxt()*** and using the same default formatting name (*"sblnhdo"*) to be overwritten.
 
-[code language="javascript"]
+```javascript
 $("#menu-edit").formatTxt($("#box-txt"), {sblnhdo: {tg:[{nm:null, atr:"style", ext:"text-decoration"}], vlatr: function(mnit, slc){
-    return ["style", "text-decoration"];
+	return ["style", "text-decoration"];
 }}});
-[/code]
+```
 
-<strong>
-Manipulações extras com "datamnpl_obj"
-</strong>
 
-<hr />
+# Manipulações extras com *"datamnpl_obj"*
 
-Para eventos extras do menu pode-se usar o objeto <strong>datamnpl_obj</strong> de métodos para anexar manipulações ao fluxo principal de formatações e independente delas. Ex.: a formatação de cor necessita de um manipulador para alterar o valor de destaque (dstq:{atr:"style", ext:"color"}) entre cor do texto ("color") e cor do fundo ("background-color") verificando qual foi selecionado pelo usuário. Na aplicação de <span style="color: #807482;"><strong>formatTxt()</strong></span> ao menu de edição, deve-se passar o objeto com um ou mais manipuladores, como terceiro parâmetro. Os nomes/rótulos dos métodos devem ser diferentes dos nomes de propriedade em "datafrmt_obj" uma vez que na aplicação eles são unidos num só objeto, permitindo manipulação de todos os dados. O uso de <strong>this</strong> nos métodos refere-se ao objeto pai <strong>dados_obj</strong> criado na aplicação.
+For extra events in the menu we can use the object **datamnpl_obj** with methods to attach manipulations to the mainstream formats and independent of them. Ex.: color formatting needs a handler to change the highlighted value `dstq: {behind, "style", ext: "color"}` between text color (*"color"*) and background color (*"background-color"*) by checking which has been selected by the user. While applying ***formatTxt()*** to the edit menu, we must pass the object with one or more handlers as the third parameter. The methods names/labels should be different from the property names in *"datafrmt_obj"* because in the application they are united in one object, allowing manipulation of all data. The use of **this** in the methods refers to the parent object ***dados_obj***  created in the application.
 
-[code language="javascript"]
-$("#menu-edit").formatTxt($("#box-txt"), null, {txtcortp: function(mnmp, slc){//Para cores
-    var chk = $(mnmp).children("input:checked").val();//opção selecionada pelo usuário
-    this.txtcor.tg[0].ext = (chk == "1" ? "color" : "background-color");//altera o valor de comparação para destaque
-    $(mnmp).parents(".frmttxt-mn-drpdn").find(".frmttxt-mn-it.rmv").attr("data-val", (chk == "1" ? "#888888" : "inherit"));//altera o valor usado no item que simula remoção de cor, usando a cor padrão para cor de texto e "inherit" para cor de fundo
+```javascript
+$("#menu-edit").formatTxt($("#box-txt"), null, {txtcortp: function(mnmp, slc){//For colors
+	var chk = $(mnmp).children("input:checked").val();//option selected by user
+	this.txtcor.tg[0].ext = (chk == "1" ? "color" : "background-color");//changes the comparison value for highlight
+	$(mnmp).parents(".frmttxt-mn-drpdn").find(".frmttxt-mn-it.rmv").attr("data-val", (chk == "1" ? "#888888" : "inherit"));//changes the value used in the item that simulates color removal, using the default color for text color and "inherit" for background color
 }});
-[/code]
+```
 
-<strong>Eventos na caixa de edição
-</strong>
 
-<hr />
+# Eventos na caixa de edição
 
-Outros eventos na aplicação são prontamente preparados na caixa de edição de conteúdo como:
-<ul>
-	<li>Ao selecionar texto ou posicionar o cursor (por mouse ou teclado) detecta as formatações (tags) já aplicadas para destacar os itens no menu:</li>
-</ul>
-[gallery ids="3201,3207,3210" type="columns"]
-<ul>
-	<li>Limpa formatação ao usuário colar texto por mouse ou teclado. Verifica se existe dados de cópia na memória e reinsere sem formatação;</li>
-	<li>Ao usuário teclar <strong>tab</strong>, insere os códigos de espaço equivalentes no html, sem deixar perder o foco</li>
-</ul>
-<strong>Destroy
-</strong>
+Other events after the application are readily prepared in content editing box as:
 
-<hr />
+- When selecting text or positioning the cursor (by mouse or keyboard) detects formatting (tags) already applied to highlight the items on the menu:
+![prtflo_modulo_PluginFormatTxt3](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt3.jpg)
+![prtflo_modulo_PluginFormatTxt9](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt9.jpg)
+![prtflo_modulo_PluginFormatTxt12](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt12.jpg)
+- Clear formatting when user pasting text by mouse or keyboard. Checks for print data in memory and reinserts it plain;
+- When user hits tab, inserts the equivalent space code in html, without losing focus
 
-O método <strong>destroy($(menu-element))</strong> mata as aplicações do plugin no elemento do menu (ou coleção de elementos), em seus elementos filhos e na caixa editável atrelada ao menu. Remove eventos com o rótulo "mnedt" e outros dados:
 
-[code language="javascript"]
+# Destroy
+
+The method `destroy($(element-menu))` kills the plugin methods in the menu element (or collection of elements), in its child elements and in the editable box linked to the menu. Remove events labeled with "mnedt" and other data:
+
+```javascript
 $.fn.formatTxt.destroy($("#menu-edit"));
-[/code]
+```
