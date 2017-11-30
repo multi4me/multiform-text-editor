@@ -1,11 +1,11 @@
 # ***MultiformTextEditor***
-
+<br><br>
 > Made to be used by other programmers and receive contributions from the <em>JavaScript</em> developer community. If you are one of them, contribute, and if you are a Portuguese-speaker help us to translate the code into English. :octocat:
 
 
-
+<br><br>
 ![prtflo_modulo_PluginFormatTxt1](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt1.jpg)
-
+<br><br>
 
 Focused on programmers with experience in ***JavaScript & jQuery***, the purpose of the plugin as well as being clean and slim, it is a way to edit text on a level of customization to add any kind of formatting and insertion without the need to change the base and plug standards (but ready for this too and can serve as a basis for other plugins) and allowing us to use any HTML structure in the controls, buttons and styling when mounting the edit menu. For this, we need some standard labels setting to be followed when naming classes and in the using data attributes in the main elements, they are:
 
@@ -42,19 +42,19 @@ Here is a simple example of a HTML structure for a menu of controls and editable
 <div id="box-txt" contenteditable="true" placeholder="Digite o texto"></div>
 ```
 
-
+<br><br>
 We must include the **jQuery** (minimum version 2.0) in the index of our site and the plugin ***MultiformTextEditor***:
 
 ```html
 <script src="/path/to/jquery.multiform-text-editor.js"</script>
 ```
 
-
+<br><br>
 The pages will then be ready to receive mounting applications of menus for the specified edit boxes, via **jQuery**; like this:
 
 
 #### `$(menu-element).formatTxt($(box-element)|function()[, datafrmt_obj, datamnpl_obj, callback($bxelmnt, slc_obj, exec)]});`
-
+<br><br>
 
 
 ## Description
@@ -110,7 +110,7 @@ $("#menu-edit").formatTxt($("#box-txt"), null, null, function(cx, slc, exc){
 - A function is passed as the last parameter to run something after any change in the text box.
 
 
-
+<br><br>
 ## Execution and predefined formatting
 
 The plugin constructor method ***formatTxt()***, search the elements with the standard classes and prepares the events of the menu items and edit box to highlight, detection and application of formattings and assemblies. Uses the default object **datafrmt_obj** (plus custom formatting object, if specified) for application of several formatting options, including the use of the method `execCommand (command, ShowDefaultUI(false), value(optional))`, which allows us to run standard formatting commands to edit content.
@@ -123,7 +123,7 @@ The example above has been assembled using the labels (classes and attributes) o
 ![prtflo_modulo_PluginFormatTxt10](https://multi4dotme.files.wordpress.com/2017/11/prtflo_modulo_pluginformattxt10.jpg)
 
 
-
+<br><br>
 ## Custom formats with *"datafrmt_obj"*
 
 With the options of adding a custom formatting object and extra manipulations, that's possible, for example, add a list of shapes in SVG (rectangle, diamond, ellipse, etc.) to be inserted in the text, something that is not usually offered by plugins, or even an item to apply a set of *css* pre-created styles to the text selected. Programmers must follow the standards of **datafrmt_obj** to add properties and methods to format, manipulate and insert into the editable box. We can even rewrite data standards, their labels and values.
@@ -145,7 +145,7 @@ $("#menu-edit").formatTxt($("#box-txt"), {sblnhdo: {tg:[{nm:null, atr:"style", e
 ```
 
 
-
+<br><br>
 ## Extra manipulations with *"datamnpl_obj"*
 
 For extra events in the menu we can use the object **datamnpl_obj** with methods to attach manipulations to the mainstream formats and independent of them. Ex.: color formatting needs a handler to change the highlighted value `dstq: {behind, "style", ext: "color"}` between text color (*"color"*) and background color (*"background-color"*) by checking which has been selected by the user. While applying ***formatTxt()*** to the edit menu, we must pass the object with one or more handlers as the third parameter. The methods names/labels should be different from the property names in *"datafrmt_obj"* because in the application they are united in one object, allowing manipulation of all data. The use of **this** in the methods refers to the parent object ***dados_obj***  created in the application.
@@ -159,7 +159,7 @@ $("#menu-edit").formatTxt($("#box-txt"), null, {txtcortp: function(mnmp, slc){//
 ```
 
 
-
+<br><br>
 ## Events in the edit box
 
 Other events after the application are readily prepared in content editing box as:
@@ -172,7 +172,7 @@ Other events after the application are readily prepared in content editing box a
 - When user hits tab, inserts the equivalent space code in html, without losing focus
 
 
-
+<br><br>
 ## Destroy
 
 The method `destroy($(element-menu))` kills the plugin methods in the menu element (or collection of elements), in its child elements and in the editable box linked to the menu. Remove events labeled with "mnedt" and other data:
