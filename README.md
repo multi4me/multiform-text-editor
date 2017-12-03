@@ -188,6 +188,6 @@ $.fn.formatTxt.destroy($("#menu-edit"));
 <br><br>
 ## License
 
-This project is licensed under the terms of the **[MIT License](https://choosealicense.com/licenses/mit/)**
+This project is under the terms of the **[MIT License](https://choosealicense.com/licenses/mit/)**
 
 Copyright (c) 2017 Multi4me
