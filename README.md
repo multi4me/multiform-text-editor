@@ -8,7 +8,7 @@
 
 ## Initial assembly
 
-Focused on programmers with experience in ***JavaScript & jQuery***, the purpose of the plugin as well as being clean and slim, it is offer a way to prepare a text editor on a level of customization to add any kind of formatting and insertion without the need to change the base and plug standards (but ready for this too and can serve as a basis for other plugins) and allowing us to use any HTML structure in the controls, buttons and styling when mounting the edit menu. For this, we need some standard labels setting to be followed when naming classes and using data attributes in the main elements, they are:
+Focused on programmers with experience in ***JavaScript & jQuery***, the purpose of the plugin as well as being clean and slim, it is offer a way to prepare a text editor on a level of customization to add any kind of formatting and insertion without the need to change the plugin code and its standards (but ready for this too and can serve as a basis for other plugins) and allowing us to use any HTML structure in the controls, buttons and styling when mounting the edit menu. For this, we need some standard labels setting to be followed when naming classes and using data attributes in the main elements, they are:
 
 - **frmttxt-mn-it** for each format item with the attribute **data-frmt="\*"** for the format type and optionally **data-val="*"**
 - **frmttxt-mn-gp** for groupd of formatting items and a child element with the class **frmttxt-mn-drpdn** to serve as wrapper of the items;
