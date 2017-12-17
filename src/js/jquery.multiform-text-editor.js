@@ -188,7 +188,7 @@
 						for(var prop in dados_obj){//Varre o objeto passando por cada propriedade
 							tg_ar = dados_obj[prop].tg;//array de tags
 							if(tg_ar){//Se o item possui tags de referência
-								for(var i=0; i<tg_ar.length; i++){
+								for(i=0; i<tg_ar.length; i++){
 									if(typeof tg_ar[i]=="string" && tg_ar[i]==slc_obj.tag){//Tag simples - verifica nome somente [ex.: <b>, <i>, <u>, ...]
 										elmtmnit.find("[data-frmt="+prop+"]").addClass('frmttxt-mn-slcndo');//aplica o destaque ao item conforme nome da formatação (propriedade)
 										break;//bateu com uma tag da propriedade atual - sai do loop filho
@@ -295,7 +295,7 @@
 	$.fn.formatTxt.altrElmnt = function(elmt, nelmt, atr_ad, atr_rm){
 		elmt.each(function(){
 			if(atr_ad){//Se há array de atributos a serem adicionados:
-				for(var i=0; i<atr_ad.length; i++){
+				for(i=0; i<atr_ad.length; i++){
 					var atr = atr_ad[i].atr;
 					var vl1 = (typeof atr_ad[i].vl1 != "function" ? atr_ad[i].vl1 : atr_ad[i].vl1(this));
 					if(atr == "style"){//Se é atributo de estilo inclui por "css()" usando dois valores
@@ -309,7 +309,7 @@
 				}
 			}
 			if(atr_rm){//Se há array de atributos a serem removidos:
-				for(var i=0; i<atr_rm.length; i++){
+				for(i=0; i<atr_rm.length; i++){
 					$(this).removeAttr(atr_rm[i]);
 				}
 			}
