@@ -49,7 +49,7 @@ Here is a simple example of a HTML structure for a menu of controls and editable
 We must include the **jQuery** (minimum version 2.0) in the index of our site and the plugin ***MultiformTextEditor***:
 
 ```html
-<script src="/path/to/jquery.multiform-text-editor.js"</script>
+<script src="/path/to/jquery.multiform-text-editor.js"></script>
 ```
 
 <br><br>

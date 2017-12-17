@@ -181,7 +181,7 @@
 				typeof mnslc_tm != "undefined" ? clearTimeout(mnslc_tm) : null;//limpa o temporizador antes de reseta-lo
 				mnslc_tm = setTimeout(function(){
 					elmtmnit.find(".frmttxt-mn-slcndo").removeClass('frmttxt-mn-slcndo');//remove destaque de todos elementos do menu (filhos, netos...) que possuem a classe
-					slc_obj = $.fn.formatTxt.GetSetSelectObj();//obtém objeto com os dados de seleção
+					var slc_obj = $.fn.formatTxt.GetSetSelectObj();//obtém objeto com os dados de seleção
 					if(slc_obj && !$(slc_obj.elmt).is("[contenteditable=true]")){//Só entra se há seleção e se o envolucro da seleção não é a própria caixa editável
 						//Aplica classe de destaque aos elementos do menu comparando "tag" do texto selecionado com as tags de referência (alguns possuem tags altenativas para diferentes navegadores e/ou formas de formatação)
 						var tg_ar, tg_vl;
@@ -298,10 +298,8 @@
 				for(var i=0; i<atr_ad.length; i++){
 					var atr = atr_ad[i].atr;
 					var vl1 = (typeof atr_ad[i].vl1 != "function" ? atr_ad[i].vl1 : atr_ad[i].vl1(this));
-					if(atr_ad[i].vl2){//Se foi informado um segundo valor (para "style")
-						var vl2 = (typeof atr_ad[i].vl2 != "function" ? atr_ad[i].vl2 : atr_ad[i].vl2(this));
-					}
 					if(atr == "style"){//Se é atributo de estilo inclui por "css()" usando dois valores
+						var vl2 = (typeof atr_ad[i].vl2 != "function" ? atr_ad[i].vl2 : atr_ad[i].vl2(this));
 						$(this).css(vl1, vl2);
 					}else if(atr == "class"){//Se é atributo de classe inclui valor por "addClass()"
 						$(this).addClass(vl1);
