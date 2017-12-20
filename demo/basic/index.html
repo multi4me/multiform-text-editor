@@ -10,9 +10,13 @@
 <body>
 	<section class="explain center">
 		<h3>Applying</h3>
-		<p>$("#menu-edit-first").formatTxt($("#box-txt"), null, null, function(cx, slc, exc){<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;FormatShowMsg(cx, slc, exc);<br>
+		<p>$("#menu").formatTxt($("#box-txt"), null, null, function(cx, slc, exc){<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(cx, slc, exc);<br>
 		});</p>
+		<p>function ShowMessage(cx, slc, exc){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;cx.keyup();<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;exc == false ? alert("Not supported - The command was not executed by this browser. If possible, upgrade to a newer version.") : null;<br>
+		}</p>
 	</section>
 	<section class="explain center">
 		<h3>Solutions in <i>datafrmt_obj</i></h3>
@@ -21,43 +25,44 @@
 		&nbsp;&nbsp;&nbsp;&nbsp;itlco: {tp:"italic", tg:["I", "EM"]},<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;sblnhdo: {tp:"underline", tg:["U"]},<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;rscdo: {tp:"strikeThrough", tg:["STRIKE"]},<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;sbrscrto: {tp:"superscript", tg:["SUP"]},<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;sbscrto: {tp:"subscript", tg:["SUB"]},<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;sbrlnhdo: {tg:[{nm:null, atr:"style", ext:"text-decoration"}], vlatr: function(mnit, slc){<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ["style", "text-decoration"];<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;}},<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;sbrscrto: {tp:"superscript", tg:["SUP"]},<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;sbscrto: {tp:"subscript", tg:["SUB"]},<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;tplist1: {tp:"insertUnorderedList", css: true},<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;tplist2: {tp:"insertOrderedList", css: true},<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;lmpfrmt: {tp:"removeFormat"}<br>
 		}</p>
 	</section>
 	<div class="center">
-		<div id="menu-edit-first" class="menu-edit unselectable">
-			<b class="frmttxt-mn-it" data-frmt="ngrto" title="Negrito">B</b>
-			<i class="frmttxt-mn-it fa" data-frmt="itlco" title="Itálico" style="font-style: italic;">I</i>
-			<u class="frmttxt-mn-it" data-frmt="sblnhdo" title="Sublinhado">U</u>
+		<div id="menu" class="menu-edit unselectable">
+			<b class="frmttxt-mn-it" data-frmt="ngrto" title="Bold">B</b>
+			<i class="frmttxt-mn-it fa" data-frmt="itlco" title="Italic" style="font-style: italic;">I</i>
+			<u class="frmttxt-mn-it" data-frmt="sblnhdo" title="Underline">U</u>
 			&nbsp;&nbsp;❘&nbsp;&nbsp;
-			<div class="frmttxt-mn-gp extra-frmt" title="Extras">
+			<div class="frmttxt-mn-gp extra-frmt" title="Extra">
 				<span><s>S</s>²</span>
 				<div class="frmttxt-mn-drpdn">
-					<s class="frmttxt-mn-it" data-frmt="rscdo" title="riscado">S</s>
-					<span class="frmttxt-mn-it" data-frmt="sbrlnhdo" data-val="overline" title="sobrelinhado" style="text-decoration: overline;">O</span>
-					<span class="frmttxt-mn-it sobrescrito" data-frmt="sbrscrto" title="sobrescrito"><span>X</span>²</span>
-					<span class="frmttxt-mn-it subscrito" data-frmt="sbscrto" title="subscrito"><span>X</span>₂</span>
+					<s class="frmttxt-mn-it" data-frmt="rscdo" title="strikethrough">S</s>
+					<span class="frmttxt-mn-it" data-frmt="sbrlnhdo" data-val="overline" title="overline" style="text-decoration: overline;">O</span>
+					<span class="frmttxt-mn-it sobrescrito" data-frmt="sbrscrto" title="superscript"><span>X</span>²</span>
+					<span class="frmttxt-mn-it subscrito" data-frmt="sbscrto" title="subscript"><span>X</span>₂</span>
 				</div>
 			</div>
 			&nbsp;&nbsp;
-			<div class="frmttxt-mn-gp tipo-lista" title="Listagem">
+			<div class="frmttxt-mn-gp tipo-lista" title="List">
 				<span class="fa fa-list">&nbsp;</span>
 				<div class="frmttxt-mn-drpdn">
-					<span class="frmttxt-mn-it fa fa-list-ul" data-frmt="tplist1" title="pontilhada"><span></span></span>
-					<span class="frmttxt-mn-it fa fa-list-ol" data-frmt="tplist2" title="numerada"><span></span></span>
+					<span class="frmttxt-mn-it fa fa-list-ul" data-frmt="tplist1" title="unordered"><span></span></span>
+					<span class="frmttxt-mn-it fa fa-list-ol" data-frmt="tplist2" title="ordered"><span></span></span>
 				</div>
 			</div>
 			&nbsp;&nbsp;&nbsp;❘&nbsp;&nbsp;
-			<span class="frmttxt-mn-it fa fa-ban" data-frmt="lmpfrmt" title="Limpa formatação"></span>
+			<span class="frmttxt-mn-it fa fa-ban" data-frmt="lmpfrmt" title="Clear formatting"></span>
 		</div>
-		<div id="box-txt" contenteditable="true">
+		<!-- Text box -->
+		<div id="box-txt" contenteditable="true" placeholder="Enter text here...">
 			<div>Lorem <b>ipsum dolor sit amet</b>, <i>consectetur adipiscing elit</i>. Integer sem quam, <u>pulvinar eget diam sed</u>, <strike>consequat imperdiet dui</strike>.&nbsp;<span style="text-decoration: overline;">Duis consequat</span>&nbsp;nisl ut sodales tempus. y = b<sup>x</sup> &lt;=&gt; x = log<sub>b</sub> (y)</div><div><ul><li>Mauris aliquam dignissim ante ut ultrices.<br></li><li>Morbi suscipit enim et nisi suscipit tempor ut sed mauris.<br></li><li>Sed vitae euismod nunc.<br></li><li>Sed pretium sodales tempor.<br></li></ul></div>
 		</div>
 	</div>

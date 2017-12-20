@@ -1,0 +1,59 @@
+/*Customização extra*/
+
+.tooltipster-light-shadow {
+	border-radius: 5px; 
+	border: 1px solid #cccccc;
+	background: #ededed;
+	color: #666666;
+	box-shadow: 2px 2px 2px #888888;
+	margin-top: -15px;
+}
+.tooltipster-light-shadow .tooltipster-content {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	padding: 8px 10px;
+}
+
+.tooltipster-light-medium {
+	border-radius: 5px; 
+	border: 1px solid #BBBBBB;
+	background: #ededed;
+	color: #666666;
+	box-shadow: 1px 2px 2px #888888;
+}
+.tooltipster-light-medium .tooltipster-content {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 15px;
+	padding: 6px 8px;
+}
+/*Ícone é montado em diferentes elementos. Usa-se important para garantir os estilos*/
+.tooltipster-icon-light-medium {
+	cursor: help !important;
+	background: #5A7488 !important;
+	border: 1px solid #565656 !important;
+	width: 1.3em !important;
+	height: 1.3em !important;
+	margin: 2em 0 0 -1em !important;
+	position: fixed !important;
+	border-radius: 100% !important;
+	color: #F7F3F3 !important;
+	font-size: 13px !important;
+	text-align: center !important;
+}
+
+.tooltipster-light-small {
+	border-radius: 4px; 
+	border: 1px solid #cccccc;
+	background: #ededed;
+	color: #666666;
+	box-shadow: 2px 2px 2px #888888;
+	margin-top: -20px;
+}
+.tooltipster-light-small .tooltipster-content {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 10px;
+	padding: 6px 8px;
+}
