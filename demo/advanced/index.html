@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Basic demo</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<link rel="stylesheet" href="css/tooltipster.css" type="text/css"/>
+	<link rel="stylesheet" href="css/tooltipster-light-extra.css" type="text/css"/>
+</head>
+<body>
+	<section class="explain center">
+		<h3>Applying for all menus</h3>
+		<p>$(".menu-edit").formatTxt(function(){return $(this).parent().find(".box-txt")}, null, null, function(cx, slc, exc){<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(cx, slc, exc);<br>
+		});</p>
+		<p>function ShowMessage(cx, slc, exc){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;cx.keyup();<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;exc == false ? alert("Not supported - The command was not executed by this browser. If possible, upgrade to a newer version.") : null;<br>
+		}</p>
+	</section>
+	<br><br>
+	<div class="center">
+		<div class="menu-edit unselectable">
+			<b class="frmttxt-mn-it" data-frmt="ngrto" title="Bold">B</b>
+			<i class="frmttxt-mn-it fa" data-frmt="itlco" title="Italic" style="font-style: italic;">I</i>
+			<u class="frmttxt-mn-it" data-frmt="sblnhdo" title="Underline">U</u>
+			&nbsp;&nbsp;❘&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp extra-frmt" title="Extra">
+				<span><s>S</s>²</span>
+				<div class="frmttxt-mn-drpdn">
+					<s class="frmttxt-mn-it" data-frmt="rscdo" title="strikethrough">S</s>
+					<span class="frmttxt-mn-it" data-frmt="sbrlnhdo" data-val="overline" title="overline" style="text-decoration: overline;">O</span>
+					<span class="frmttxt-mn-it sobrescrito" data-frmt="sbrscrto" title="superscript"><span>X</span>²</span>
+					<span class="frmttxt-mn-it subscrito" data-frmt="sbscrto" title="subscript"><span>X</span>₂</span>
+				</div>
+			</div>
+			&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp insere-crctr" title="Symbols">
+				<span>Ω∫</span>
+				<div class="frmttxt-mn-drpdn">
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">×</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">÷</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">√</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">±</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">≤</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">≥</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">≈</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">≠</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">⇒</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">⇔</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">→</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">¬</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">⊂</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">⊃</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∑</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∃</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">α</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">β</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">γ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∆</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">Θ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">λ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">μ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">ξ</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">π</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">σ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">Ψ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">Ω</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">δ</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∂</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∞</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∫</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">∮</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∪</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">∩</span>
+					<span class="frmttxt-mn-it" data-frmt="insrcrctr">£</span><span class="frmttxt-mn-it" data-frmt="insrcrctr">€</span>
+				</div>
+			</div>
+			&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp tipo-lista fa fa-list" title="List">
+				<div class="frmttxt-mn-drpdn">
+					<span class="frmttxt-mn-it fa fa-list-ul" data-frmt="tplist1" title="unordered"><span></span></span>
+					<span class="frmttxt-mn-it fa fa-list-ol" data-frmt="tplist2" title="ordered"><span></span></span>
+				</div>
+			</div>
+			&nbsp;&nbsp;&nbsp;❘&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp fonte-tmnho" title="Font size">
+				<span>T<small>↕</small></span>
+				<ul class="frmttxt-mn-drpdn">
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="12px">12px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="14px">14px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="16px">16px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="18px">18px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="20px">20px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="22px">22px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="24px">24px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="26px">26px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="28px">28px</li>
+				</ul>
+			</div>
+			&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp texto-cor fa fa-tint" title="Color">
+				<div class="frmttxt-mn-drpdn">
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(255, 255, 255)" style="background: #FFFFFF;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(247, 218, 100)" style="background: #F7DA64;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(250, 197, 28)" style="background: #FAC51C;"></span>
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(251, 160, 38)" style="background: #FBA026;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(243, 121, 52)" style="background: #F37934;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(209, 213, 216)" style="background: #D1D5D8;"></span>
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(213, 170, 170)" style="background: #D5AAAA;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(235, 107, 86)" style="background: #EB6B56;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(226, 80, 65)" style="background: #E25041;"></span>
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(184, 49, 47)" style="background: #B8312F;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(170, 213, 170)" style="background: #AAD5AA;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(97, 189, 109)" style="background: #61BD6D;"></span>
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(0, 168, 133)" style="background: #00A885;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(128, 110, 128)" style="background: #806E80;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(149, 64, 129)" style="background: #954081;"></span>
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(84, 172, 210)" style="background: #54ACD2;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(44, 130, 201)" style="background: #2C82C9;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(71, 85, 119)" style="background: #475577;"></span>
+					<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(0, 0, 0)" style="background: #000000;"></span>
+					<span class="frmttxt-mn-it rmv" data-frmt="txtcor" data-val="#888888" style="background: #F1F1F1;">×</span><!-- Usado como remoção de cor de texto ou fundo -->
+					<div class="frmttxt-mn-mp" data-mnpl="txtcortp">
+						<input id="tipo-cor1" type="radio" name="tipo-cor" value="1" checked><label for="tipo-cor1">Text</label>
+						<input id="tipo-cor2" type="radio" name="tipo-cor" value="2"><label for="tipo-cor2">Background</label>
+					</div>
+				</div>
+			</div>
+			&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp frmttxt-mn-mp insere-link fa fa-link" data-mnpl="insrlnkvl" title="Link">
+				<div class="frmttxt-mn-drpdn">
+					<input type="text" placeholder="Enter an address"><span class="frmttxt-mn-it" data-frmt="insrlnk">ok</span>
+				</div>
+			</div>
+			&nbsp;&nbsp;
+			<span class="frmttxt-mn-it remove-link fa fa-chain-broken" data-frmt="rmvlnk" title="Unlink">&nbsp;</span>
+			&nbsp;&nbsp;❘&nbsp;&nbsp;
+			<span class="frmttxt-mn-it fa fa-ban" data-frmt="lmpfrmt" title="Clear formatting"></span>
+		</div>
+		<!-- Text box -->
+		<div id="box-txt-input" class="box-txt" contenteditable="true" placeholder="Enter text here...">
+			<div>Lorem <b>ipsum dolor sit amet</b>, <i>consectetur adipiscing elit</i>. Integer sem quam, <u>pulvinar eget diam sed</u>, <strike>consequat imperdiet dui</strike>.&nbsp;<span style="text-decoration: overline;">Duis consequat</span>&nbsp;nisl ut sodales tempus. <i>W</i> = ∫ F . dr ⇒ ∫ F . v dt&nbsp; ⇔&nbsp; E = m<i style="font-size: 12px;">γ</i>c<sup>2</sup></div><div><ul><li>Mauris aliquam&nbsp;<span style="font-size: 22px;">dignissim</span>&nbsp;ante ut ultrices<br></li><li>Morbi suscipit enim et nisi suscipit&nbsp;<span style="font-size: 24px;">tempor</span>&nbsp;ut sed mauris<br></li><li>Sed vitae <span style="color: rgb(213, 170, 170);"><b>euismod</b></span> nunc<br></li><li><span style="background-color: rgb(170, 213, 170); color: rgb(184, 49, 47);">Sed pretium sodales tempor</span><br></li></ul></div><div>Integer vel enim <span style="color: rgb(0, 168, 133);">vitae tortor</span> posuere pellentesque. <span style="background-color: rgb(209, 213, 216); color: rgb(84, 172, 210);">Phasellus magna nibh</span>, lobortis eget metus ut, <span style="background-color: rgb(250, 197, 28); color: rgb(128, 110, 128);">bibendum faucibus nulla</span>. Praesent vulputate augue nec scelerisque condimentum. <a href="https://ma.tt/2011/09/automattic-creed/" target="_blank">Proin ut magna lorem</a>.</div>
+		</div>
+	</div>
+
+	<!-- Inline menu -->
+	<br><br>
+	<section class="explain center">
+		<p>Select parts of the text to display the menu and edit inline.</p>
+	</section>
+	<div class="center">
+		<div class="menu-edit mn-inline unselectable">
+			<b class="frmttxt-mn-it" data-frmt="ngrto">B</b>
+			<i class="frmttxt-mn-it fa" data-frmt="itlco" style="font-style: italic;">I</i>
+			<u class="frmttxt-mn-it" data-frmt="sblnhdo">U</u>
+			&nbsp;&nbsp;❘&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp extra-frmt">
+				<span><s>S</s>²</span>
+				<div class="frmttxt-mn-drpdn">
+					<s class="frmttxt-mn-it" data-frmt="rscdo">S</s>
+					<span class="frmttxt-mn-it" data-frmt="sbrlnhdo" data-val="overline" style="text-decoration: overline;">O</span>
+					<span class="frmttxt-mn-it sobrescrito" data-frmt="sbrscrto"><span>X</span>²</span>
+					<span class="frmttxt-mn-it subscrito" data-frmt="sbscrto"><span>X</span>₂</span>
+				</div>
+			</div>
+			&nbsp;&nbsp;
+			<div class="frmttxt-mn-gp fonte-tmnho">
+				<span>T<small>↕</small></span>
+				<ul class="frmttxt-mn-drpdn">
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="12px">12px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="14px">14px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="16px">16px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="18px">18px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="20px">20px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="22px">22px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="24px">24px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="26px">26px</li>
+					<li class="frmttxt-mn-it" data-frmt="fnttmnho" data-val="28px">28px</li>
+				</ul>
+			</div>
+			&nbsp;&nbsp;&nbsp;❘&nbsp;&nbsp;
+			<span class="frmttxt-mn-it fa fa-ban" data-frmt="lmpfrmt"></span>
+		</div>
+		<!-- Text box -->
+		<div id="box-txt-inline" class="box-txt" contenteditable="true" placeholder="Enter text here...">
+			<div>Lorem <b>ipsum dolor sit amet</b>, <i>consectetur adipiscing elit</i>. Integer sem quam, <u>pulvinar eget diam sed</u>, <strike>consequat imperdiet dui</strike>.&nbsp;<span style="text-decoration: overline;">Duis consequat</span>&nbsp;nisl ut sodales tempus.&nbsp;<span style="font-size: 24px;">y = bx &lt;=&gt; x = logb (y)</span></div><div><ul><li>Mauris aliquam dignissim ante ut ultrices.<br></li><li>Morbi suscipit enim et nisi suscipit tempor ut sed mauris.<br></li><li>Sed vitae euismod nunc.<br></li><li>Sed pretium sodales tempor.<br></li></ul></div>
+		</div>
+	</div>
+	<!-- ... -->
+
+	<script src="../../src/lib/jquery.min.js" charset="utf-8"></script>
+	<script src="js/jquery.tooltipster.min.js" charset="utf-8"></script>
+	<script src="../../src/js/jquery.multiform-text-editor.js" charset="utf-8"></script>
+	<script src="js/effects.js"></script>
+</body>
+</html>
