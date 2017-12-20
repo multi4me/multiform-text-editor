@@ -42,7 +42,8 @@ input, textarea, select, *[contenteditable] {
 	font-family: initial;
 }
 .center {
-	margin: 10px 40px;
+	max-width: 900px;
+	margin: 0 auto;
 }
 #box-txt {
 	padding: 10px;
@@ -81,7 +82,7 @@ input, textarea, select, *[contenteditable] {
 	position: relative;
 	color: #4e4e4e;
 }
-.menu-edit .frmttxt-mn-it:not([data-frmt="txtcor"]).frmttxt-mn-slcndo {/*Destaque para item selecionado (menos os de cor)*/
+.menu-edit .frmttxt-mn-it.frmttxt-mn-slcndo {/*Destaque para item selecionado (menos os de cor)*/
 	/* border: 1px dotted #909090 !important; */
 	background-color: #E8E8E8 !important;
 }
@@ -144,14 +145,6 @@ input, textarea, select, *[contenteditable] {
 .menu-edit .extra-frmt .sobrescrito > span, .menu-edit .extra-frmt .subscrito > span {
 	color: rgba(0, 0, 0, 0.2);
 }
-.menu-edit .insere-crctr .frmttxt-mn-drpdn {
-	width: 177px;
-}
-.menu-edit .insere-crctr .frmttxt-mn-drpdn .frmttxt-mn-it {
-	width: 25px;
-	height: 25px;
-	padding: 3px;
-}
 .menu-edit .tipo-lista > span {
 	font-size: 14px;
 }
@@ -167,77 +160,17 @@ input, textarea, select, *[contenteditable] {
 .menu-edit .fonte-tmnho .frmttxt-mn-drpdn {
 	width: 62px;
 }
-.menu-edit .fonte-tmnho .frmttxt-mn-drpdn .frmttxt-mn-it {
-	padding: 5px;
-	border: 1px solid transparent;
-	float: none;
-}
-.menu-edit .texto-cor > span {
-	display: block;
-	background: url("img/ico-text-color-32.png") no-repeat center;
-	background-size: 90%;/*separado para funcionar no Safari*/
-}
-.menu-edit .texto-cor .frmttxt-mn-drpdn {
-	width: 132px;
-}
-.menu-edit .texto-cor .frmttxt-mn-drpdn .frmttxt-mn-it {
-	width: 26px;
-	height: 24px;
-	padding: 3px;
-}
-.menu-edit .texto-cor .frmttxt-mn-it:hover {
-	border: 1px solid #505050 !important;
-}
-.menu-edit .texto-cor .frmttxt-mn-it:not(.rmv).frmttxt-mn-slcndo {
-	border: 2px groove #C7C7C7;
-}
-.menu-edit .texto-cor .frmttxt-mn-drpdn .frmttxt-mn-mp {
-	margin: 3px;
-	float: left;
-}
-.menu-edit .texto-cor .frmttxt-mn-drpdn .frmttxt-mn-mp input:checked + label {
-	color: #444444;
-	font-weight: 500;
-}
-.menu-edit .texto-cor .frmttxt-mn-drpdn .frmttxt-mn-mp input {
-	height: 11px;
-	padding: 0px;/*para IE*/
-}
-.menu-edit .texto-cor .frmttxt-mn-drpdn .frmttxt-mn-mp label {
-	font-size: 13px;
-}
-.menu-edit .insere-link > span {
-	display: block;
-	background: url("img/ico-link-32.png") no-repeat center;
-	background-size: 95%;/*separado para funcionar no Safari*/
-}
-.menu-edit .insere-link .frmttxt-mn-drpdn {
-	width: 267px;
-}
-.menu-edit .insere-link .frmttxt-mn-drpdn input {
-	font-size: 15px;
-	width: 235px;
-	height: 28px;
-	padding: 4px;
-	border: none;
-	float: left;
-}
-.menu-edit .insere-link .frmttxt-mn-drpdn .frmttxt-mn-it {
-	font-weight: 500;
-	width: 30px;
-	height: 28px;
-	padding: 5px;
-	background-color: #F2F9FF;
-	border: 1px solid #BBB !important;
-}
-.menu-edit .remove-link {
-	background: url("img/ico-unlink-32.png") no-repeat center;
-	background-size: 80%;/*separado para funcionar no Safari*/
-}
 
 /*=====================================
 =            Media Queries            =
 =====================================*/
+
+@media only screen and (max-width: 920px) {
+	.center {
+		margin: 5px 20px;
+	}
+}
+
 /* Small screens */
 @media only screen { } /* Define mobile styles */
 
