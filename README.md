@@ -10,13 +10,13 @@
 
 ## Initial assembly
 
-Focused on programmers with experience in ***JavaScript & jQuery***, the purpose of the plugin as well as being clean and slim, it is offer a way to prepare a text editor on a level of customization to add any kind of formatting and insertion without the need to change the plugin code and its patterns (but ready for this too and can serve as a basis for other plugins) and allowing us to use any HTML structure in the controls, buttons and styling when setting the edit menu. For this, we need some standard labels setting to be followed when naming classes and using data attributes in the main elements, they are:
+Focused on programmers with experience in ***JavaScript & jQuery***, the purpose of the plugin as well as being clean and slim, it is offer a way to prepare a text editor on a level of customization to add any kind of formatting and insertion without the need to change the plugin code and its patterns (but ready for this too and can serve as a basis for other plugins) and allowing us to use any HTML structure in the controls, buttons and styling when setting the edit menu. For this, we need some standard labels setting to be followed when naming classes and using data attributes in the main elements; they are:
 
-- **frmttxt-mn-it** for each format item with the attribute **data-frmt="\*"** for the format type and optionally **data-val="*"**
-- **frmttxt-mn-gp** for groupd of formatting items and a child element with the class **frmttxt-mn-drpdn** to serve as wrapper of the items;
+- Class **frmttxt-mn-it** for each format item with the attribute **data-frmt="\*"** for the format type and optionally **data-val="*"**
+- Class **frmttxt-mn-gp** for groups of formatting items using a child element with the class **frmttxt-mn-drpdn** to serve as wrapper of the items;
 - **frmttxt-mn-mp** for handlers of other elements and data before and during the formatting, with the attribute **data-mnpl="*"** for the name of the method
 
-Each format item will have the class **frmttxt-mn-it** and the attribute **data-frmt="\*"** will have the same chosen format label, referenced in the objec **datafrmt_obj** (explained later) optionally being able to use **data-val="\*"** for when we want to pass value formatting, although it is possible to pass value in different ways. Elements that list a group of formatting items (like a color palette, where each color is an element *"frmttxt-mn-it"*) will have the class **frmttxt-mn-gp**, which when clicked will display its child with the class **frmttxt-mn-drpdn** that is who owns the set of formatting items. If an element somewhere in the menu is needed to manipulate other elements and data before and during the formatting (such as two elements for the user to select whether to apply color to text or background), we should set the class **frmttxt-mn-mp** and the attribute **data-mnpl="\*"** with the name of the method created in the object **datamnpl_obj** (deve ser diferente dos nomes de *"datafrmt_obj"*). (must be different from the names of *"datafrmt_obj"*). See the explanation of the objects *"datafrmt_obj"* and *"datamnpl_obj"* at the end. Both can be edited by the programmer to change the formatting standards already available. 
+Each format item will have the class **frmttxt-mn-it** and the attribute **data-frmt="\*"** will have the same chosen format label, referenced in the objec **datafrmt_obj** (explained later) optionally being able to use **data-val="\*"** for when we want to pass value formatting, although it is possible to pass value in different ways. Elements that list a group of formatting items (like a color palette, where each color is an element *"frmttxt-mn-it"*) will have the class **frmttxt-mn-gp**, which when clicked will display its child with the class **frmttxt-mn-drpdn** that is who owns the set of formatting items. If an element somewhere in the menu is needed to manipulate other elements and data before and during the formatting (such as two elements for the user to select whether to apply color to text or background), we should set the class **frmttxt-mn-mp** and the attribute **data-mnpl="\*"** with the name of the method created in the object **datamnpl_obj** (must be different from the names of *"datafrmt_obj"*). See the explanation of the objects *"datafrmt_obj"* and *"datamnpl_obj"* at the end. Both can be edited by the programmer to change the formatting standards already available. 
 \* As text box for editing we should use a **non-input** element with the attribute `contenteditable="true"`
 
 Here is a simple example of a HTML structure for a menu of controls and editable text box:
@@ -34,15 +34,15 @@ Here is a simple example of a HTML structure for a menu of controls and editable
 			<span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(0, 168, 133)" style="background: #00A885;"></span><span class="frmttxt-mn-it" data-frmt="txtcor" data-val="rgb(128, 110, 128)" style="background: #806E80;"></span>
 			<span class="frmttxt-mn-it rmv" data-frmt="txtcor" data-val="#888888" style="background: #F1F1F1;">×</span><!-- Used to remove color from text or background -->
 			<div class="frmttxt-mn-mp" data-mnpl="txtcortp">
-				<input id="tipo-cor1" type="radio" name="tipo-cor" value="1" checked><label for="tipo-cor1">Texto</label>
-				<input id="tipo-cor2" type="radio" name="tipo-cor" value="2"><label for="tipo-cor2">Fundo</label>
+				<input id="tipo-cor1" type="radio" name="tipo-cor" value="1" checked><label for="tipo-cor1">Text</label>
+				<input id="tipo-cor2" type="radio" name="tipo-cor" value="2"><label for="tipo-cor2">Background</label>
 			</div>
 		</div>
 	</div>
 	&nbsp;&nbsp;&nbsp;❘&nbsp;&nbsp;
 	<span class="frmttxt-mn-it limpa-frmt" data-frmt="lmpfrmt">&nbsp;</span>
 </div>
-<div id="box-txt" contenteditable="true" placeholder="Digite o texto"></div>
+<div id="box-txt" contenteditable="true" placeholder="Write your text here"></div>
 ```
 
 <br><br>
@@ -62,15 +62,15 @@ The pages will then be ready to receive mounting applications of menus for the s
 
 ## Description
 
-- **menu-element**: id/class of the wrapper element of the editing menu controls. If it's a class representing multiple elements, the parameter *"box-element"* needs to be a function to return the specific edition of each menu box.
-- **box-element|function()**: element *jQuery* specifying the content editing box or a custom function to return the edit box - inside its scope the value of **this** refers to the current menu *jQuery* element.
-- **datafrmt_obj** (optional): object to inclusion of extra formats according to standards and possibilities detailed in the plug body:
+- **menu-element**: id/class of the wrapper element of the editing menu controls. If it's a class representing multiple elements, the first parameter needs to be a function to return the specific edition of each menu box.
+- **box-element|function()**: *jQuery* element specifying the content editing box or a custom function to return the edit box - inside its scope **"this"** refers to the current menu *jQuery* element.
+- **datafrmt_obj** (optional): object to inclusion of extra formats according to standards and possibilities detailed in the plugin body:
   - `{bold: {tp:"bold", tg:["B", "STRONG"]}, itlco: {tp:"italic", tg:["I", "EM"]}, color: {...}, ...}`
-- **datamnpl_obj** (opcional): object for extra menu events with methods to attach manipulations to mainstream formats according to standards and possibilities detailed in the plug body:
+- **datamnpl_obj** (opcional): object for extra menu events with methods to attach manipulations to mainstream formats according to standards and possibilities detailed in the plugin body:
   - `{colortype: function(mnmp, slc){ ... }}`
-- **callback($bxelmnt, slc_obj, exec)**: if set, the function is called after any content formatting. The **this** in the scope function is the *item/$(element)* clicked on the menu. Parameters:
+- **callback($bxelmnt, slc_obj, exec)**: if set, the function is called after any content formatting. The **this** in the function scope is the *item/$(element)* clicked on the menu. Parameters:
   - **$bxelmnt**: jQuery element of the edit box;
-  - **slc_obj**: data object of the current selection in the content `{rng: range-obj, NEMt: slctd-elmnt tag: slctd_tag, txt: slctd_txt}`;
+  - **slc_obj**: data object of the current selection in the content `{rng: range-obj, elmt: slctd-elmnt, tag: slctd_tag, txt: slctd_txt}`;
   - **exec**: true/false indicating whether the formatting applied was supported in the current browser
 
 
@@ -89,7 +89,7 @@ $("#menu-edit").formatTxt($("#box-txt"), {blckqte: {tg:["BLOCKQUOTE"], vltgc: fu
 }}});
 ```
 
-- Added an object with a new format for creating block quote.
+- Adding an object with a new format for creating block quote.
 
 
 ### Example 3
@@ -106,7 +106,7 @@ $(".menu-edit").formatTxt(function(){
 ```javascript
 $("#menu-edit").formatTxt($("#box-txt"), null, null, function(cx, slc, exc){
 	cx.keyup();
-	exc == false ? alert("Formatação não suportada por este navegador") : null;
+	exc == false ? alert("Formatting not supported by this browser") : null;
 });
 ```
 
