@@ -19,7 +19,7 @@ $(document).ready(function(){
 	x.Selector = {};
 	x.Selector.getSelected = function() {
 		var t = '';
-	if(window.getSelection) {
+		if(window.getSelection) {
 			t = window.getSelection();
 		}else if(document.getSelection) {
 			t = document.getSelection();
