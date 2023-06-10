@@ -24,7 +24,7 @@ Each format item will have the class **frmttxt-mn-it** and the attribute **data
 Here is a simple example of a HTML structure for a menu of controls and editable text box:
 
 ```html
-<div id="menu-edit unselectable">
+<div class="menu-edit unselectable">
 	<b class="frmttxt-mn-it" data-frmt="ngrto">B</b>
 	<i class="frmttxt-mn-it" data-frmt="itlco">i</i>
 	<u class="frmttxt-mn-it" data-frmt="sblnhdo" data-val="underline">U</u>
